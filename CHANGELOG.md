@@ -15,3 +15,4 @@ The format is loosely [Keep a Changelog](https://keepachangelog.com/). Version s
 - `packages/db` Drizzle ORM + better-sqlite3 schema with six tables (`people`, `email_messages`, `calendar_events`, `extracted_events`, `sync_runs`, `user_settings`) and forward migration.
 - `packages/core` shared domain types, the `Connector` interface (read-only by design), and the entity-resolution algorithm (`findPersonByIdentity`).
 - `packages/secrets` `SecretStore` interface with `KeychainSecretStore` (production, OS keychain via `@napi-rs/keyring`) and `MockSecretStore` (tests).
+- `packages/ai` provider-agnostic `LLMClient` interface with `AnthropicLLMClient` (Sonnet 4.6 + Haiku 4.5, prompt-cached system prompts) and `MockLLMClient`. `extractJSON` retries once on bad JSON or schema validation failure.
