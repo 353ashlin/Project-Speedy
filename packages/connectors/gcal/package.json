@@ -1,0 +1,32 @@
+{
+  "name": "@speedy/gcal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@googleapis/calendar": "9.0.0",
+    "@speedy/core": "workspace:*",
+    "@speedy/db": "workspace:*",
+    "@speedy/google-shared": "workspace:*",
+    "@speedy/secrets": "workspace:*",
+    "google-auth-library": "9.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "typescript": "5.7.3",
+    "vitest": "2.1.8"
+  }
+}

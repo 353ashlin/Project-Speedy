@@ -1,0 +1,15 @@
+{
+  "id": "evt-multi-002",
+  "status": "confirmed",
+  "summary": "Team standup",
+  "description": "Daily 15-minute sync.",
+  "location": "Zoom",
+  "start": { "dateTime": "2026-06-06T09:00:00-04:00" },
+  "end": { "dateTime": "2026-06-06T09:15:00-04:00" },
+  "attendees": [
+    { "email": "alice@example.com", "displayName": "Alice Chen", "responseStatus": "accepted" },
+    { "email": "BOB@example.com", "displayName": "Bob Garcia", "responseStatus": "accepted" },
+    { "email": "alice@example.com", "displayName": "Alice Chen", "responseStatus": "accepted" },
+    { "email": "me@example.com", "displayName": "Me", "responseStatus": "needsAction" }
+  ]
+}

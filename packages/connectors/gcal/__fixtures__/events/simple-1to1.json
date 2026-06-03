@@ -1,0 +1,12 @@
+{
+  "id": "evt-simple-001",
+  "status": "confirmed",
+  "summary": "Coffee with Joe",
+  "description": "Catch up about the project.",
+  "location": "Blue Bottle, downtown",
+  "start": { "dateTime": "2026-06-05T15:00:00-04:00" },
+  "end": { "dateTime": "2026-06-05T16:00:00-04:00" },
+  "attendees": [
+    { "email": "joe@example.com", "displayName": "Joe Wilson", "responseStatus": "accepted" }
+  ]
+}
