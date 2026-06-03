@@ -14,8 +14,10 @@
       "**/dist/**",
       "**/coverage/**",
       "**/migrations/**",
+      "**/drizzle/**",
       "**/__fixtures__/**",
-      "**/data/**"
+      "**/data/**",
+      "pnpm-lock.yaml"
     ]
   },
   "formatter": {
