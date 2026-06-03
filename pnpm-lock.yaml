@@ -32,6 +32,12 @@ importers:
       '@speedy/db':
         specifier: workspace:*
         version: link:../../packages/db
+      '@speedy/gcal':
+        specifier: workspace:*
+        version: link:../../packages/connectors/gcal
+      '@speedy/gmail':
+        specifier: workspace:*
+        version: link:../../packages/connectors/gmail
       '@speedy/google-shared':
         specifier: workspace:*
         version: link:../../packages/connectors/google-shared

@@ -59,10 +59,12 @@ export function normalizeCalendarEvent(event: calendar_v3.Schema$Event): Normali
 
   const seenEmails = new Set<string>()
   const people: NewPerson[] = []
+  const attendeeEmails: string[] = []
   for (const attendee of event.attendees ?? []) {
     const email = attendee.email?.trim().toLowerCase()
     if (!email || seenEmails.has(email)) continue
     seenEmails.add(email)
+    attendeeEmails.push(email)
     people.push({
       displayName: attendee.displayName ?? email,
       relationship: 'unknown',
@@ -70,5 +72,9 @@ export function normalizeCalendarEvent(event: calendar_v3.Schema$Event): Normali
     })
   }
 
-  return { people, events: [calendarEvent] }
+  return {
+    people,
+    events: [calendarEvent],
+    eventLinks: [{ gcalId, attendeeEmails }],
+  }
 }

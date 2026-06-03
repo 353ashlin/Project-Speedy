@@ -1,21 +1,44 @@
 import type { NewCalendarEvent, NewEmailMessage, NewExtractedEvent, NewPerson } from '@speedy/db'
 
 /**
+ * Link info the connector knows but cannot put on the row itself. The
+ * orchestrator resolves these emails / handles to `Person` IDs and patches
+ * `from_person_id` / `to_person_ids` / `attendee_person_ids` after the people
+ * are upserted. Without this side-band, the orchestrator would have no way
+ * to know which `Person` row is the sender of which email.
+ */
+export interface EmailLink {
+  gmailId: string
+  fromEmail?: string
+  toEmails: string[]
+}
+
+export interface EventLink {
+  gcalId: string
+  attendeeEmails: string[]
+}
+
+/**
  * What a connector emits per raw item. A connector can produce multiple kinds
  * of records from a single source — e.g. a Gmail message becomes one
  * `NewEmailMessage` plus zero-or-more `NewPerson` rows (one per unresolved
- * sender / recipient identity) plus optionally an `NewExtractedEvent` (when a
+ * sender / recipient identity) plus optionally a `NewExtractedEvent` (when a
  * known-sender parser fires).
  *
  * Fields are optional so connectors only set what they actually produce.
  * The sync orchestrator merges batches and applies them to the DB inside a
  * single transaction.
+ *
+ * `emailLinks` / `eventLinks` carry the address-side info that the row
+ * stubs do not (since `from_person_id` etc. are null until resolution).
  */
 export interface NormalizedBatch {
   people?: NewPerson[]
   emails?: NewEmailMessage[]
   events?: NewCalendarEvent[]
   extracted?: NewExtractedEvent[]
+  emailLinks?: EmailLink[]
+  eventLinks?: EventLink[]
 }
 
 export interface SyncOptions {

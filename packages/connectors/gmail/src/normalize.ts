@@ -108,5 +108,13 @@ export function normalizeGmailMessage(message: gmail_v1.Schema$Message): Normali
     })
   }
 
-  return { people, emails: [email] }
+  const emailLinks = [
+    {
+      gmailId,
+      fromEmail: fromAddrs[0]?.email,
+      toEmails: [...toAddrs, ...ccAddrs].map((a) => a.email),
+    },
+  ]
+
+  return { people, emails: [email], emailLinks }
 }
