@@ -26,3 +26,7 @@ The format is loosely [Keep a Changelog](https://keepachangelog.com/). Version s
 - `POST /api/sync/run?connector=gmail|gcal|all` — single-shot sync runner.
 - `POST /api/setup/complete` — advances setup state machine to `complete`.
 - `Connector` contract extended with optional `emailLinks` / `eventLinks` arrays so the orchestrator can resolve person IDs after upserting people.
+- **v1 demo milestone**: `/` dashboard renders a chronological feed (emails + calendar events newest-first), `/people` lists everyone in the graph sorted by recent interaction, `/people/[id]` shows a person profile with recent emails + upcoming events + past events.
+- `SyncIndicator` header component — "Last synced X ago" + Sync now button + auto-sync on mount when data is > 2 min stale.
+- `GET /api/feed` — JSON endpoint for client-side refresh of the dashboard.
+- 9 vitest tests for the queries layer (`getFeed`, `listPeople`, `getPersonProfile`, `getLastSyncs`).
