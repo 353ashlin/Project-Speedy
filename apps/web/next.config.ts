@@ -2,7 +2,7 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   // Native Node modules — don't try to bundle them through webpack.
-  serverExternalPackages: ['@napi-rs/keyring', 'better-sqlite3'],
+  serverExternalPackages: ['@napi-rs/keyring', 'better-sqlite3', 'google-auth-library'],
   webpack: (config, { isServer }) => {
     if (isServer) {
       // Belt-and-braces: even with serverExternalPackages, webpack still
@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
         ...existing,
         { '@napi-rs/keyring': 'commonjs @napi-rs/keyring' },
         { 'better-sqlite3': 'commonjs better-sqlite3' },
+        { 'google-auth-library': 'commonjs google-auth-library' },
       ]
     }
     return config

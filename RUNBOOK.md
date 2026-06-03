@@ -42,16 +42,25 @@ Re-runs the connector against your real OAuth account, redacts PII, writes JSON 
 
 ## Regenerate Google OAuth credentials
 
-Stub — filled in when OAuth setup ships (PR #8).
+When Google revokes a client (inactivity, quota issues, or you accidentally
+committed the client secret somewhere):
 
-When Google revokes a client (e.g. due to inactivity or quota issues):
-
-1. Open Google Cloud Console → APIs & Services → Credentials.
+1. Open [Google Cloud Console → APIs & Services → Credentials](https://console.cloud.google.com/apis/credentials).
 2. Delete the old OAuth client.
-3. Create a new OAuth client → application type: **Desktop application**.
-4. Download the client ID + secret.
-5. In the app: navigate to `/setup/google-credentials` (or Settings → Re-authenticate Google in later versions) and paste the new values.
-6. Complete the OAuth sign-in again.
+3. Click "Create Credentials" → "OAuth client ID". Application type:
+   **Desktop application**. Name: "Project Speedy".
+4. Copy the Client ID and Client Secret.
+5. In the app: visit `/setup/google-credentials` and paste the new values.
+   (For v1 there is no in-app "reset" button — you can force a re-run by
+   updating `user_settings.setup_step` to `'google_credentials'` directly via
+   `pnpm db:studio`, or by nuking `data/speedy.db` if you don't mind losing
+   the local cache.)
+6. Click "Sign in with Google" again to complete the loopback flow.
+
+If Google does not return a refresh token (the in-app error says so), revoke
+the app at <https://myaccount.google.com/permissions> and re-authorize. This
+is a Google quirk — refresh tokens are only issued on first consent unless
+`prompt=consent` is passed (which we do).
 
 ## Rotate the Anthropic API key
 
