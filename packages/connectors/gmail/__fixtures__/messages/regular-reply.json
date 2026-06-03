@@ -1,0 +1,16 @@
+{
+  "id": "192abc1234",
+  "threadId": "192abc1234",
+  "labelIds": ["INBOX", "CATEGORY_PERSONAL"],
+  "snippet": "Yeah Friday at 7 works. Want me to grab dinner on the way?",
+  "internalDate": "1748880000000",
+  "payload": {
+    "headers": [
+      { "name": "From", "value": "Joe Wilson <joe@example.com>" },
+      { "name": "To", "value": "Me <me@example.com>" },
+      { "name": "Subject", "value": "Re: Dinner Friday?" },
+      { "name": "Date", "value": "Mon, 2 Jun 2026 12:00:00 +0000" }
+    ]
+  },
+  "sizeEstimate": 1200
+}

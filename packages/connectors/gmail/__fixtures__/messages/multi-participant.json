@@ -1,0 +1,17 @@
+{
+  "id": "193def5678",
+  "threadId": "193thread9999",
+  "labelIds": ["INBOX", "UNREAD"],
+  "snippet": "Let's plan the trip. Cabin sleeps 6 so we're good.",
+  "internalDate": "1748966400000",
+  "payload": {
+    "headers": [
+      { "name": "From", "value": "\"Sarah Chen\" <sarah@example.com>" },
+      { "name": "To", "value": "Me <me@example.com>, Joe Wilson <joe@example.com>" },
+      { "name": "Cc", "value": "Bob <bob@example.com>" },
+      { "name": "Subject", "value": "Cabin weekend planning" },
+      { "name": "Date", "value": "Tue, 3 Jun 2026 12:00:00 +0000" }
+    ]
+  },
+  "sizeEstimate": 3400
+}
