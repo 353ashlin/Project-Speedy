@@ -11,6 +11,11 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@speedy/ai": "workspace:*",
+    "@speedy/core": "workspace:*",
+    "@speedy/db": "workspace:*",
+    "@speedy/secrets": "workspace:*",
+    "drizzle-orm": "0.38.3",
     "next": "15.1.4",
     "react": "19.0.0",
     "react-dom": "19.0.0"

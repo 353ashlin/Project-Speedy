@@ -7,5 +7,5 @@ export type {
   Role,
 } from './client.js'
 export { BaseLLMClient } from './client.js'
-export { AnthropicLLMClient } from './anthropic.js'
+export { AnthropicLLMClient, validateAnthropicApiKey } from './anthropic.js'
 export { MockLLMClient } from './mock.js'

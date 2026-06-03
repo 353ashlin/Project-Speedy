@@ -23,6 +23,21 @@ importers:
 
   apps/web:
     dependencies:
+      '@speedy/ai':
+        specifier: workspace:*
+        version: link:../../packages/ai
+      '@speedy/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@speedy/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@speedy/secrets':
+        specifier: workspace:*
+        version: link:../../packages/secrets
+      drizzle-orm:
+        specifier: 0.38.3
+        version: 0.38.3(@types/better-sqlite3@7.6.12)(@types/react@19.0.7)(better-sqlite3@11.7.0)(react@19.0.0)
       next:
         specifier: 15.1.4
         version: 15.1.4(@babel/core@7.29.7)(@playwright/test@1.49.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)

@@ -23,6 +23,11 @@ The Next.js 15 App Router web app. The only frontend in v1.
 - `pnpm typecheck` — `tsc --noEmit`.
 - `pnpm build` — production build.
 
+## Imports
+
+- **No `.js` extensions on relative imports** in `apps/web/` — Next.js's webpack resolves TS files via the `Bundler` resolver without extensions. This is the opposite of `packages/*/src/`, which are pure ESM and *do* require `.js`. Get this wrong and the build fails with "Module not found".
+- **Native modules** (`@napi-rs/keyring`, `better-sqlite3`) are marked as `serverExternalPackages` AND webpack `externals` in `next.config.ts`. If you add another native dep, do the same.
+
 ## Style note (v1)
 
 Use inline styles for the placeholder and setup screens until Tailwind lands in PR #12. Don't introduce a new styling library in the meantime — the locked stack picks Tailwind for v1.
