@@ -10,3 +10,5 @@ The format is loosely [Keep a Changelog](https://keepachangelog.com/). Version s
 
 - Monorepo scaffold: pnpm + Turborepo + TypeScript strict + Biome + lefthook + GitHub Actions CI.
 - `CLAUDE.md`, `RUNBOOK.md`, `BACKLOG.md`, PR template — AI build harness docs.
+- `apps/web` Next.js 15 web app shell with App Router + placeholder home page.
+- Vitest + Playwright wired up with one unit test and one E2E smoke test.
