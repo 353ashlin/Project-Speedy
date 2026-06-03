@@ -14,3 +14,4 @@ The format is loosely [Keep a Changelog](https://keepachangelog.com/). Version s
 - Vitest + Playwright wired up with one unit test and one E2E smoke test.
 - `packages/db` Drizzle ORM + better-sqlite3 schema with six tables (`people`, `email_messages`, `calendar_events`, `extracted_events`, `sync_runs`, `user_settings`) and forward migration.
 - `packages/core` shared domain types, the `Connector` interface (read-only by design), and the entity-resolution algorithm (`findPersonByIdentity`).
+- `packages/secrets` `SecretStore` interface with `KeychainSecretStore` (production, OS keychain via `@napi-rs/keyring`) and `MockSecretStore` (tests).
