@@ -69,3 +69,28 @@ export class AnthropicLLMClient extends BaseLLMClient {
     this.clientPromise = null
   }
 }
+
+/**
+ * One-shot validation of a proposed Anthropic API key. Used during first-run
+ * setup to verify the user pasted a real, working key before persisting it
+ * to the keychain. Uses Haiku for the cheapest possible round-trip.
+ */
+export async function validateAnthropicApiKey(
+  apiKey: string,
+): Promise<{ ok: true } | { ok: false; error: string }> {
+  if (!apiKey || typeof apiKey !== 'string') {
+    return { ok: false, error: 'API key must be a non-empty string.' }
+  }
+  try {
+    const client = new Anthropic({ apiKey })
+    await client.messages.create({
+      model: MODEL_IDS.haiku,
+      max_tokens: 5,
+      messages: [{ role: 'user', content: 'reply ok' }],
+    })
+    return { ok: true }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    return { ok: false, error: message }
+  }
+}
