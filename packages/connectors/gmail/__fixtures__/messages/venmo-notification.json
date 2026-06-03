@@ -1,0 +1,16 @@
+{
+  "id": "194ghi9012",
+  "threadId": "194ghi9012",
+  "labelIds": ["INBOX", "CATEGORY_UPDATES"],
+  "snippet": "Joe Wilson paid you $850.00 - June rent",
+  "internalDate": "1749052800000",
+  "payload": {
+    "headers": [
+      { "name": "From", "value": "Venmo <venmo@venmo.com>" },
+      { "name": "To", "value": "me@example.com" },
+      { "name": "Subject", "value": "Joe Wilson paid you $850.00" },
+      { "name": "Date", "value": "Wed, 4 Jun 2026 12:00:00 +0000" }
+    ]
+  },
+  "sizeEstimate": 5800
+}

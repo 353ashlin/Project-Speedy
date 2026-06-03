@@ -1,0 +1,16 @@
+{
+  "id": "195jkl3456",
+  "threadId": "195jkl3456",
+  "labelIds": ["INBOX"],
+  "snippet": "You have been invited to: Team standup",
+  "internalDate": "1749139200000",
+  "payload": {
+    "headers": [
+      { "name": "From", "value": "Sarah Chen <sarah@example.com>" },
+      { "name": "To", "value": "me@example.com" },
+      { "name": "Subject", "value": "Invitation: Team standup @ Thu Jun 5 9:00am" },
+      { "name": "Date", "value": "Thu, 5 Jun 2026 08:30:00 +0000" }
+    ]
+  },
+  "sizeEstimate": 8200
+}
