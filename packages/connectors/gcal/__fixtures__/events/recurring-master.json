@@ -1,0 +1,12 @@
+{
+  "id": "evt-recurring-004",
+  "status": "confirmed",
+  "summary": "Weekly 1:1 with manager",
+  "description": "Standing meeting.",
+  "start": { "dateTime": "2026-06-08T14:00:00-04:00" },
+  "end": { "dateTime": "2026-06-08T14:30:00-04:00" },
+  "recurrence": ["RRULE:FREQ=WEEKLY;BYDAY=MO"],
+  "attendees": [
+    { "email": "manager@example.com", "displayName": "Pat Manager" }
+  ]
+}

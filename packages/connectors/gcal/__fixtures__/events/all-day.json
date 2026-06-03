@@ -1,0 +1,10 @@
+{
+  "id": "evt-allday-003",
+  "status": "confirmed",
+  "summary": "Sarah's birthday",
+  "start": { "date": "2026-06-07" },
+  "end": { "date": "2026-06-08" },
+  "attendees": [
+    { "email": "sarah@example.com", "displayName": "Sarah Chen" }
+  ]
+}
